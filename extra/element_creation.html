@@ -6,34 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Element creation using html,jQuery & DOm</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-        function appendTxt(){
-            var txt1 = "<p>Hello</p>"; //Created with html
-
-            var txt2 = $("<p></p>").text("World."); //Created with jQuery
-
-            var txt3 = document.createElement("p");
-            txt3.innerHTML = "Programming at it best.";
-
-            var border = "<p>-------------------------------------------</p>";
-
-            $("body").append(txt1,txt2,txt3,border);
-            
-        }
-
-        var str = "The quick brown fox jumps over the lazy dog Abc";
-        function countvowel(str){
-           
-            var res = str.match(/[aeiou]/gi);
-            return res === null ? 0 : res.length;
-
-
-        }
-        console.log(countvowel(str));
-
-    </script>
+    
 </head>
 <body>
    <button onclick="appendTxt()">Click to get text</button>
+   <script>
+    function appendTxt(){
+        var txt1 = "<p>Hello</p>"; //Created with html
+
+        var txt2 = $("<p></p>").text("World."); //Created with jQuery
+
+        var txt3 = document.createElement("p");
+        txt3.innerHTML = "Programming at it best.";
+
+        var border = "<p>-------------------------------------------</p>";
+
+        $("body").append(txt1,txt2,txt3,border);
+        
+    }
+
+    var str = "The quick brown fox jumps over the lazy dog Abc";
+    function countvowel(str){
+       
+        var res = str.match(/[aeiou]/gi);
+        return res === null ? 0 : res.length;
+
+
+    }
+    console.log(countvowel(str));
+
+</script>
 </body>
 </html>
