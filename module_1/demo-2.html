@@ -48,18 +48,7 @@
          }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#append").click(function(){
-            var fname = $("#fname").val();
-            var lname = $("#lname").val();
-            var markup = "<tr><td>" + fname + "</td><td>" + lname + "</td></tr>";
-            console.log(markup);
-            $("table tbody").append(markup);
-            });
-        });
-       
-    </script>
+  
 </head>
 <body>
     
@@ -90,5 +79,15 @@
         </tbody>    
     </table>
     
+    <script>
+         $("#append").click(function(){
+            var fname = $("#fname").val();
+            var lname = $("#lname").val();
+            var markup = "<tr><td>" + fname + "</td><td>" + lname + "</td></tr>";
+            console.log(markup);
+            $("table tbody").append(markup);
+        });
+    </script>
+
 </body>
 </html>
