@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count number of vowels</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <h2>Number of vowels in the text:-  </h2>
+    </div>
+
+    <script>
+        var str = window.prompt("Enter String:- ");
+
+
+        function countvowel(str){
+            var result = str.match(/[aeiou]/gi);
+            return result === null ? 0 : result.length;
+        }
+        console.log(countvowel(str));
+
+        $("div h2").append(countvowel(str));
+    </script>
+</body>
+</html>
