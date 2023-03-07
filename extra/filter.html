@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <script>
+        $(function(){
+            $(".filter").css({"display":"flex","flex-direction":"column","align-items":"center","justify-content":"center","width":"50%","background":"#b24926","position":"absolute"});
+
+            $(".animate").click(function(){
+                var div = $(".filter");
+                div.animate({left: '500px'}, "slow");
+                div.animate({top: '230px'}, "slow");
+                
+            });
+
+            $("#people").css({"list-style":"square"});
+            $("#people li").css({"font-family":"Arial","font-size":"20px","padding":"20px","color":"#FFFFFF"});
+            $(".abc").css({"color":"white"});
+            $(".show").css({"padding":"10px 20px","background":"black","color":"#FFFFFF","margin-bottom":"20px"});
+            $(".show").hover(function(){
+                $(this).css({"background":"white","color":"black","cursor":"pointer","border":"unset"});
+                }, function(){
+                $(this).css({"padding":"10px 20px","background":"black","color":"#FFFFFF","margin-bottom":"20px"});
+            });
+            
+            $(".hide").css({"padding":"10px 20px","background":"black","color":"#FFFFFF","margin-bottom":"20px"});
+            $(".hide").hover(function(){
+                $(this).css({"background":"white","color":"black","cursor":"pointer","border":"unset"});
+                }, function(){
+                $(this).css({"padding":"10px 20px","background":"black","color":"#FFFFFF","margin-bottom":"20px"});
+            });
+
+            $(".animate").css({"padding":"10px 20px","background":"black","color":"#FFFFFF","margin-bottom":"20px"});
+            $(".animate").hover(function(){
+                $(this).css({"background":"white","color":"black","cursor":"pointer","border":"unset"});
+                }, function(){
+                $(this).css({"padding":"10px 20px","background":"black","color":"#FFFFFF","margin-bottom":"20px"});
+            });
+            
+            $(".show").click(function(){
+                var $names = $("#people li");
+                var $out = $("#output");
+                var $pubs = $names.filter('.pub');
+                var html="";
+                console.log($pubs);
+               
+                if($pubs.length){
+                    var html="";
+                    $pubs.each(function(){
+                        html += "<li>" + $(this).text() + "</li>";
+                    });
+                    $out.append(html);
+                }
+                else{
+                    $out.append("<li>No pubs found </li>");
+                }
+            });
+            $(".hide").click(function(){
+                $("#output").fadeOut("slow");
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="filter">
+
+        <ul id="people">
+            <li class="pub">Jainish Gajjar</li>
+            <li class="pub">abcd efgh</li>
+            <li class="abc">sjgklsjf</li>
+        </ul>
+    
+        <button class="show">Show Pubs</button>
+        <button class="hide">Hide Pubs</button>
+        <button class="animate">Animate</button>
+        <h2 class="abc">Pubs</h2>
+        <ul id="output"></ul>
+    </div>
+  
+    
+</body>
+</html>

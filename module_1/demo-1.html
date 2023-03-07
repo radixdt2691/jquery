@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Resize (width/height)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        
+
+        var winSize = function(){
+            var w=$(window).width();
+            var h=$(window).height();
+
+            $(".winsize").css({"display":"flex","align-items":"center","justify-content":"center","color":"white","font-size":"30px","background":"gray","height":"50vh","width":"50%","position":"absolute"}).html("<h3>Width: "+w+"<br>Height: "+h+"</h3>");
+        };
+        $(document).ready(winSize);
+        $(window).resize(winSize);
+
+        
+    </script>
+</head>
+<body>
+    <div class="winsize"></div>
+</body>
+</html>

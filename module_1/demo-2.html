@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add tr to table</title>
+    <style>
+        .d-flex{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            padding: 10px;
+            background-color:burlywood;
+            border-radius: 15px;
+        }
+        input{
+            padding: 10px 10px;
+            margin: 20px;
+        }
+        #append{
+            padding: 10px 20px;
+            border: 0px;
+            background-color: black;
+            color: #FFFFFF;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+        #append:hover{
+            background-color: #FFFFFF;
+            color: black;
+        }
+          table{
+           width: 50%;
+           margin: 0 auto;
+           margin-top: 25px;
+           border-collapse: collapse;
+         }
+         table, th, td{
+           border: 1px solid #6C220B;
+         }
+         table th, table td{
+           padding: 8px;
+           text-align: center;
+         }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#append").click(function(){
+            var fname = $("#fname").val();
+            var lname = $("#lname").val();
+            var markup = "<tr><td>" + fname + "</td><td>" + lname + "</td></tr>";
+            console.log(markup);
+            $("table tbody").append(markup);
+            });
+        });
+       
+    </script>
+</head>
+<body>
+    
+    <div class="d-flex">
+        <h3>Add tr to table using jQuery</h3>   
+        <center>
+            <form>
+                First Name:- <input type="text" id="fname"><br>
+                Last Name:- <input type="text" id="lname"><br>
+                
+                <input type="button" id="append" value="Add Rows to table">
+            </form>
+        </center>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>abc</td>
+                <td>def</td>
+            </tr>
+
+        </tbody>    
+    </table>
+    
+</body>
+</html>
