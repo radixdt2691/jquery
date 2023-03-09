@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick add and remove classes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        div{
+            width: 50%;
+            background-color: beige;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .color_red{
+            background-color: red;
+        }
+        .txt-color{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="head">Welcome Hustler!!</h1>
+        <h3 class="heading-3">lorem ipsum donor</h3>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nulla quo ipsum quam dicta minima aspernatur, officiis dolorem sed inventore in nostrum nisi repellendus, blanditiis iure aliquam doloremque dolore obcaecati.</p>
+    
+        <input type="button" id="add_class" value="Add classes">
+        <input type="button" id="remove_class" value="Remove classes">
+        <input type="button" id="toggle" value="Toggle between add & remove classes">
+    </div>
+
+    <script>
+        $("#add_class").click(function(){
+            $("div").addClass("color_red");            
+            $(".head").addClass("txt-color");
+        });
+        
+        $("#remove_class").click(function(){
+            $("div").removeClass("color_red"); 
+            $(".head").removeClass("txt-color");           
+        });
+
+        $("#toggle").click(function(){
+            $("div").toggleClass("color_red"); 
+            $(".head").toggleClass("txt-color");           
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize the first letter in given string</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+
+    <div>
+        <h2></h2>
+    </div>
+    <script>
+        function capitalize(input) {  
+            var words = input.split(' ');  
+            var CapitalizedWords = [];  
+            words.forEach(element => {  
+                CapitalizedWords.push(element[0].toUpperCase() + element.slice(1, element.length));  
+            });  
+            return CapitalizedWords.join(' ');  
+        } 
+
+        var input = window.prompt("Enter string");
+
+        $("div h2").append(capitalize(input));
+</script>
+</body>
+</html>

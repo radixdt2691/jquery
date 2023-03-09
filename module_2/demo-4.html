@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Button text and color</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        input{
+            background-color: gray;
+            padding: 10px 40px;
+            cursor: pointer;
+            border-radius: 40px;
+            border: 0px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" value="Off">
+    <script>
+        $("input:button").click(function(){
+           var txtval = $(this).val();
+           console.log(txtval);
+           txtval = "On";
+           console.log(txtval);
+           
+           $("input:button").val(txtval);
+           $("input:button").css({"background-color":"green"});
+        });
+    
+    </script>
+</body>
+</html>
