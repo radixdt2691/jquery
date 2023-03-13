@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the value of input text onclick</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        input,button{
+            border: 1px solid black;
+            padding: 10px 20px;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="wrapper" value="Hello" style="text-align: center;"><button>Click Me!</button>
+
+    <script>
+        $("button").click(function(){
+            $("#wrapper").val("World");
+        });
+    </script>
+</body>
+</html>
